@@ -1,0 +1,165 @@
+<!-- {%extends 'base.html'%}
+{%load static %}
+{% block content %}
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Sislaf</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'pr/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-left: 56px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} 
+.abcd{
+  height: 100vh; /* Use viewport height for full screen */
+  background-color: white; /* Set background color to white */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Make sure padding and border are included in width */
+}
+</style>
+
+<div id="pageintro" class="hoc clear">
+    
+    <article>
+      <h3 class="heading">Quality food items</h3>
+      <p>Register with us and have quality food items.</p>
+      <footer>
+
+      </footer>
+    </article>
+    <!-- <!-- </div> -->
+  <div class="dropdown">
+    <button class="dropbtn">filter</button>
+    <div class="dropdown-content">
+        <a href="#">All</a>
+        {% for i in ct %}
+            <a href="{{ i.get_url }}">{{ i.name }}</a>
+        {% endfor %}
+    </div>
+  </div> -->
+
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+ 
+    <section id="introblocks">
+      <div class="flex-container">
+        <ul class="nospace group btmspace-80">
+          {% for product in Products %}
+          <li class="one_third">
+            <figure>
+              <a class="imgover" href="{{product.get_url}}">
+                <img src="{{product.img.url}}" alt="" style="height: 300px; width: 500px;">
+              </a>
+              <figcaption>
+                <h6 class="heading">{{product.name}}</h6>
+                <p>{{product.desc|truncatechars:15}}</p>
+                <br>
+                <p>price:{{product.price}}rs</p>
+                <br>
+                <p>stock:{{product.stock}}</p>
+              </figcaption>
+            </figure>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section> 
+
+    <section id="introblocks">
+      <div class="flex-container">
+        <ul class="nospace group btmspace-80">
+          {% for product in prod_list %}
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <!-- Add more fields as needed -->
+{% endfor %}
+
+</div>
+<div class="mx-auto">
+    {% for pg in products.paginator.page_range %}
+    <a href="?page={{pg}}" class="btn btn-light btn-sm{% if products.number == pg %} activate {% endif %}">{{pg}}</a>
+    {% endfor %}
+</div>
+</div>
+
+</div>
+</section>
+<!-- Add your next section here -->
+<section id="nextsection">
+  
+</section>
+</main>
+</div>
+
+<!-- ################################################################################################ -->
+<hr class="btmspace-80">
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+</div>
+
+
+<script src="{% static 'pr/layout/scripts/jquery.min.js'%}"></script>
+<script src="{% static 'pr/layout/scripts/jquery.backtotop.js'%}"></script>
+<script src="{% static 'pr/layout/scripts/jquery.mobilemenu.js'%}"></script>
+</body>
+</html>
+{% endblock %}   -->
